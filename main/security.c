@@ -25,7 +25,7 @@ static size_t s_priv_key_len = 0;
  * NimBLE conn_handle fits in 16-bit; however we keep a small mapping
  * of up to N concurrent connections (N = configurable).
  */
-#define MAX_SEC_CONNS 6
+#define MAX_SEC_CONNS 3
 static struct {
     uint16_t conn_handle;
     uint8_t nonce[32]; /* allow up to 32 byte nonces */
@@ -141,7 +141,7 @@ static void update_auth_char_value_and_notify(uint16_t conn_handle,
     //     ESP_LOGI(TAG, "Nonce notified to conn=%u len=%u", conn_handle, (unsigned)nonce_len);
     // }
 
-        if (nonce_len > sizeof(auth_value)) nonce_len = sizeof(auth_value);
+    if (nonce_len > sizeof(auth_value)) nonce_len = sizeof(auth_value);
     memcpy(auth_value, nonce, nonce_len);
     auth_val_len = nonce_len;
     ble_gatts_chr_updated(auth_char_handle);  // notify all subscribed clients

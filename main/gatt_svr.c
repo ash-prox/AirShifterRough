@@ -240,7 +240,7 @@ gatt_svc_access(uint16_t conn_handle, uint16_t attr_handle,
             if (rc != 0 || got != 32) return BLE_ATT_ERR_INVALID_ATTR_VALUE_LEN;
             
             bool auth_ok = sec_handle_auth_response(conn_handle, hmac, got);
-            return auth_ok ? 0 : BLE_ATT_ERR_INSUFFICIENT_AUTHEN;
+            return auth_ok ? 0 : BLE_ATT_ERR_INSUFFICIENT_AUTHEN; 
         }
 
         /* Control small numeric characteristic writes (with authentication) */

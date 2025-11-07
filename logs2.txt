@@ -105,4 +105,4 @@ static esp_mqtt5_unsubscribe_property_config_t unsubscribe_property = {
 static esp_mqtt5_disconnect_property_config_t disconnect_property = {
     .session_expiry_interval = 60,
     .disconnect_reason = 0,
-};
+};  
