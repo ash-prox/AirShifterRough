@@ -1,0 +1,49 @@
+I (753) wifi_mgr: Setting Wi-Fi config SSID='R&D 3_5G' (len=8)
+W (753) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2
+I (813) wifi:mode : sta (48:e7:29:b6:e8:08)
+I (813) wifi:enable tsf
+I (813) wifi_mgr: Wi-Fi connection initiated
+I (813) wifi_mgr: Wi-Fi start requested
+I (1063) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0
+I (1063) wifi:state: init -> auth (0xb0)
+I (1093) wifi_prph_coex: BLE Host Task Started
+I (1093) mqtt5: [APP] Startup..
+I (1093) mqtt5: [APP] Free memory: 135900 bytes
+I (1093) mqtt5: [APP] IDF version: v5.5-dirty
+I (1103) main_task: Returned from app_main()
+I (1123) wifi_prph_coex: Device Address:48:e7:29:b6:e8:0a
+I (1133) NimBLE: GAP procedure initiated: advertise;
+I (1133) NimBLE: disc_mode=2
+I (1133) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0
+I (1133) NimBLE:
+
+I (1183) wifi:state: auth -> assoc (0x0)
+I (1383) wifi:state: assoc -> run (0x10)
+I (1713) wifi:connected with R&D 3_5G, aid = 9, channel 6, BW20, bssid = f2:ed:b8:1a:d8:71
+I (1713) wifi:security: WPA2-PSK, phy: bgn, rssi: -70
+I (1713) wifi:pm start, type: 1
+
+I (1713) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+I (1733) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+I (2113) wifi:<ba-add>idx:0 (ifx:0, f2:ed:b8:1a:d8:71), tid:0, ssn:2, winSize:64
+I (3483) esp_netif_handlers: sta ip: 192.168.1.28, mask: 255.255.255.0, gw: 192.168.1.1
+I (3483) wifi_mgr: Got IP: 192.168.1.28
+I (3483) mqtt5_example: Other event id:7
+I (6793) mqtt5_example: MQTT_EVENT_CONNECTED
+I (6793) mqtt5_example: sent publish successful, msg_id=18169
+I (6803) mqtt5_example: sent subscribe successful, msg_id=63544
+I (6803) mqtt5_example: sent subscribe successful, msg_id=13976
+I (7603) mqtt5_client: MQTT_MSG_TYPE_PUBACK return code is 0
+I (7603) mqtt5_example: MQTT_EVENT_PUBLISHED, msg_id=18169
+I (9643) mqtt5_client: MQTT_MSG_TYPE_SUBACK return code is 0
+I (9643) mqtt5_example: MQTT_EVENT_SUBSCRIBED, msg_id=63544
+I (9643) mqtt5_example: sent publish successful, msg_id=0
+I (9653) mqtt5_client: MQTT_MSG_TYPE_SUBACK return code is 2
+I (9653) mqtt5_example: MQTT_EVENT_SUBSCRIBED, msg_id=13976
+I (9663) mqtt5_example: sent publish successful, msg_id=0
+I (9663) mqtt5_example: MQTT_EVENT_DATA
+I (9663) mqtt5_example: key is board, value is esp32
+I (9673) mqtt5_example: key is u, value is user
+I (9673) mqtt5_example: key is p, value is password
+I (9683) mqtt5_example: payload_format_indicator is 1
+I (9683) mqtt5_example: response_topic is /topic/test/response
