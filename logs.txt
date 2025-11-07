@@ -47,3 +47,39 @@ I (9673) mqtt5_example: key is u, value is user
 I (9673) mqtt5_example: key is p, value is password
 I (9683) mqtt5_example: payload_format_indicator is 1
 I (9683) mqtt5_example: response_topic is /topic/test/response
+
+
+
+
+
+
+
+/-------------------------------/
+//////// MQTT SECURITY //////////
+/-------------------------------/
+
+(1)
+
+    E (55888) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference
+    E (55889) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)
+    E (55900) esp-tls: create_ssl_handle failed
+    E (55905) esp-tls: Failed to open new connection
+    E (55910) transport_base: Failed to open a new connection
+
+    (ANS)
+        Passed the .pem ceertificate file more elegantly? in main/CMakeLists.txt
+        Passed the certificate buffer (contents) and size (strlen of certificate lol) into broker.verification. instead of the 
+            credentials.authentication.
+
+(2)
+
+    E (169497) esp-tls-mbedtls: mbedtls_x509_crt_parse of CA cert returned -0x2180
+    E (169497) esp-tls-mbedtls: Failed to set client configurations, returned [0x8015] (ESP_ERR_MBEDTLS_X509_CRT_PARSE_FAILED)
+    E (169507) esp-tls: create_ssl_handle failed
+    E (169507) esp-tls: Failed to open new connection
+    E (179867) transport_base: Failed to open a new connection
+
+    (ANS)
+        Working rn
+
+

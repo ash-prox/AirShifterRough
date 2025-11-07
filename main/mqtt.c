@@ -196,7 +196,7 @@ void mqtt5_app_start(void)
 
     esp_mqtt_client_config_t mqtt5_cfg = {
         //.broker.address.uri = CONFIG_BROKER_URL,
-        .broker.address.uri = "mqtts://53b5ecc0115c40cdbac2cd5b27e309a2.s1.eu.hivemq.cloud",
+        .broker.address.uri = "mqtts://53b5ecc0115c40cdbac2cd5b27e309a2.s1.eu.hivemq.cloud:8883",
         //.broker.address.uri = "mqtt://192.168.255.1",
         .session.protocol_ver = MQTT_PROTOCOL_V_5,
         //.network.disable_auto_reconnect = true,
@@ -204,6 +204,7 @@ void mqtt5_app_start(void)
         .credentials.authentication.password = "Admin1234",
         .broker.verification.certificate = hivemq_ca_pem_start,
         .broker.verification.certificate_len = strlen(hivemq_ca_pem_start),
+        //.broker.verification.certificate_len = hivemq_ca_pem_end - hivemq_ca_pem_start,
         .broker.verification.skip_cert_common_name_check = false,
         .session.last_will.topic = "/topic/will",
         .session.last_will.msg = "i will leave",
