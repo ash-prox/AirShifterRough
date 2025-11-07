@@ -6,7 +6,8 @@ esp_mqtt_client_handle_t mqtt_client = NULL;
 /* Embedded CA certificate (added to component EMBED_FILES). The symbol name
  * is created by the build system for embedded files. We reference the start
  * address here so the MQTT client can use the PEM data. */
-extern const char hivemq_ca_pem_start[] asm("_binary_hivemq_ca_pem_start");
+extern const uint8_t hivemq_ca_pem_start[] asm("_binary_cert_pem_start");
+extern const uint8_t hivemq_ca_pem_end[]   asm("_binary_cert_pem_end");
 static const char *TAG = "mqtt5_example";
 
 static void log_error_if_nonzero(const char *message, int error_code)
@@ -202,9 +203,9 @@ void mqtt5_app_start(void)
         //.network.disable_auto_reconnect = true,
         .credentials.username = "admin",
         .credentials.authentication.password = "Admin1234",
-        .broker.verification.certificate = hivemq_ca_pem_start,
-        .broker.verification.certificate_len = strlen(hivemq_ca_pem_start),
-        //.broker.verification.certificate_len = hivemq_ca_pem_end - hivemq_ca_pem_start,
+        .broker.verification.certificate = (const char *)hivemq_ca_pem_start,
+        //.broker.verification.certificate_len = strlen(hivemq_ca_pem_start),
+        .broker.verification.certificate_len = hivemq_ca_pem_end - hivemq_ca_pem_start,
         .broker.verification.skip_cert_common_name_check = false,
         .session.last_will.topic = "/topic/will",
         .session.last_will.msg = "i will leave",

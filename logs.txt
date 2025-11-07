@@ -80,6 +80,20 @@ I (9683) mqtt5_example: response_topic is /topic/test/response
     E (179867) transport_base: Failed to open a new connection
 
     (ANS)
-        Working rn
+        generated a new certificate all together, and tried authenticating with it, getting the below problem:
+        // late insight, i generated a self signed certificate, and hence it did not authenticate.
 
+(3)
+
+    E (16207) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x2700
+    I (16207) esp-tls-mbedtls: Failed to verify peer certificate!
+    E (16207) esp-tls: Failed to open new connection
+    E (16217) transport_base: Failed to open a new connection
+    E (16217) mqtt_client: Error transport connect
+
+    (ANS)
+        okay, so i got the output of `openssl s_client -showcerts -connect 53b5ecc0115c40cdbac2cd5b27e309a2.s1.eu.hivemq.cloud:8883` 
+        then i copy-pasted the contents of the certificate part (labelled begin and end certificate) (there are a total of two parts)
+        into a new file and then saved it as .pem without any extra spaces or anything, as is!
+        now its working.
 

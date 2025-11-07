@@ -8,5 +8,5 @@ idf_component_register(SRCS "security.c" "mqtt.c" "biz_logix.c"
                     #EMBED_FILES "hivemq_ca.pem")
 )
 
-target_add_binary_data(${COMPONENT_LIB} "hivemq_ca.pem" TEXT)
+target_add_binary_data(${COMPONENT_LIB} "cert.pem" TEXT)
 
