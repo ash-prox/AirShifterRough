@@ -4,9 +4,9 @@ idf_component_register(SRCS "security.c" "mqtt.c" "biz_logix.c"
                             "main.c" 
                             "gatt_svr.c"
                     PRIV_REQUIRES bt nvs_flash mqtt esp_system
-                    INCLUDE_DIRS "."
+                    INCLUDE_DIRS "include/."
                     #EMBED_FILES "hivemq_ca.pem")
 )
 
-target_add_binary_data(${COMPONENT_LIB} "cert.pem" TEXT)
+target_add_binary_data(${COMPONENT_LIB} "certs/cert.pem" TEXT)
 
