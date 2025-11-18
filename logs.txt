@@ -97,3 +97,337 @@ I (9683) mqtt5_example: response_topic is /topic/test/response
         into a new file and then saved it as .pem without any extra spaces or anything, as is!
         now its working.
 
+
+
+
+
+
+
+
+
+
+
+
+
+(1)
+
+    /////////////// ESP 1 ////////////////////////
+    I (614) main_task: Calling app_main()
+    I (644) bridge_common: esp-iot-bridge version: 1.0.1
+    I (654) wifi:wifi driver task: 3ffd0930, prio:23, stack:6656, core=0
+    I (664) wifi:wifi firmware version: 14da9b7
+    I (664) wifi:wifi certification version: v7.0
+    I (664) wifi:config NVS flash: enabled
+    I (664) wifi:config nano formatting: disabled
+    I (674) wifi:Init data frame dynamic rx buffer num: 32
+    I (674) wifi:Init static rx mgmt buffer num: 5
+    I (684) wifi:Init management short buffer num: 32
+    I (684) wifi:Init dynamic tx buffer num: 32
+    I (684) wifi:Init static rx buffer size: 1600
+    I (694) wifi:Init static rx buffer num: 10
+    I (694) wifi:Init dynamic rx buffer num: 32
+    I (704) wifi_init: rx ba win: 6
+    I (704) wifi_init: accept mbox: 6
+    I (704) wifi_init: tcpip mbox: 32
+    I (704) wifi_init: udp mbox: 6
+    I (714) wifi_init: tcp mbox: 6
+    I (714) wifi_init: tcp tx win: 5760
+    I (714) wifi_init: tcp rx win: 5760
+    I (724) wifi_init: tcp mss: 1440
+    I (724) wifi_init: WiFi RX IRAM OP enabled
+    I (724) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06
+    I (804) wifi:mode : null
+    I (814) wifi:mode : softAP (38:18:2b:8a:75:25)
+    I (814) wifi:Total power save buffer number: 16
+    I (814) wifi:Init max length of beacon: 752/752
+    I (814) wifi:Init max length of beacon: 752/752
+    Add netif ap with c1bb0fb(commit id)
+    I (824) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1
+    I (824) bridge_common: netif list add success
+    I (834) bridge_common: [WIFI_AP_DEF ]
+    I (834) bridge_common: Set ip info:192.168.5.1
+    I (844) bridge_wifi: SoftAP IP network segment has changed, deauth all station
+    I (854) wifi:Disabled PMF config for SoftAP
+    I (854) wifi:Total power save buffer number: 16
+    I (854) bridge_common: DHCPS Restart, deauth all station
+    I (854) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.5.1
+    I (864) bridge_common: [WIFI_AP_DEF ]Name Server1: 114.114.114.114
+    Add netif sta with c1bb0fb(commit id)
+    I (874) bridge_common: netif list add success
+    I (884) wifi:mode : sta (38:18:2b:8a:75:24) + softAP (38:18:2b:8a:75:25)
+    I (884) wifi:enable tsf
+    I (894) bridge_wifi: Found ssid        Goldspear
+    I (894) bridge_wifi: Found password 
+    E (894) NVS: Failed to read IP info from NVS
+    I (904) wifi:Disabled PMF config for STA
+    I (904) bridge_wifi: [esp_bridge_wifi_set_config] softap ssid: ESP_Bridge password: 12345678
+    I (1164) wifi:Total power save buffer number: 16
+    I (1164) bridge_wifi: SoftAP config changed, deauth all station
+    I (1174) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.5.1
+    I (1174) Mesh-Lite: esp-mesh-lite component version: 1.0.2
+    I (1184) Mesh-Lite: Initializing ESP-NOW for Mesh-Lite Ash in esp_mesh_lite.c
+    I (1184) ESPNOW: espnow [version: 2.0] init
+    I (1194) Mesh-Lite: Initializing Mesh-Lite-Core Ash in esp_mesh_lite.c
+    I (1194) [vendor_ie]: Mesh-Lite commit id: 308dc1f
+
+    I (1204) [vendor_ie]: Mesh ID: 77
+    W (1204) [vendor_ie]: Error Get[4354]
+    W (1204) [vendor_ie]: Error Get[4354]
+    W (1214) wifi:Haven't to connect to a suitable AP now!
+    I (1224) [ESP_Mesh_Lite_Comm]: msg action add success 
+    I (1224) [ESP_Mesh_Lite_Comm]: Bind Socket 54, port 6364
+    I (1224) [ESP_Mesh_Lite_Comm]: Bind Socket 55, port 6363 
+    I (1234) [ESP_Mesh_Lite_Comm]: Bind Socket 56, port 6366
+    I (1234) [ESP_Mesh_Lite_Comm]: Bind Socket 57, port 6365
+    I (1244) [mesh-lite-espnow]: Start espnow task 
+    W (1244) [vendor_ie]: Error Get[4354]
+    I (1254) wifi_manager: SoftAP SSID default: ESP_Bridge
+    W (1254) [vendor_ie]: Error Get[4354] 
+    I (1254) wifi_manager: SoftAP password default used.
+    W (1264) [vendor_ie]: Error Get[4354]
+    W (1264) [vendor_ie]: Error Get[4354]
+    I (1274) Mesh-Lite: Mesh-Lite connecting
+    W (1274) wifi:In 2G band, 5G channel bitmap does not take effect
+    E (1274) wifi:2g bitmap contains only invalid channels= 0xe510
+    I (1284) [vendor_ie]: esp_mesh_lite_wifi_scan_start return ESP_OK
+    I (1294) wifi_manager: Credentials queue task running - waiting for BLE creds
+    I (1294) BTDM_INIT: BT controller compile version [722c907]
+    I (1304) BTDM_INIT: Using main XTAL as clock source
+    I (1304) BTDM_INIT: Bluetooth MAC: 38:18:2b:8a:75:26
+    I (1564) security: sec_init done (nonce_len=16)
+    I (1584) wifi_prph_coex: BLE Host Task Started
+    I (1584) mqtt5: [APP] Startup..
+    I (1594) mqtt5: [APP] Free memory: 81956 bytes
+    I (1594) mqtt5: [APP] IDF version: v5.5.1-dirty
+    I (1594) main_task: Returned from app_main()
+    I (1624) wifi_prph_coex: Device Address:38:18:2b:8a:75:26
+    I (1624) NimBLE: GAP procedure initiated: advertise;
+    I (1624) NimBLE: disc_mode=2
+    I (1624) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0
+    I (1634) NimBLE:
+
+    I (1644) wifi_prph_coex: Advertising started (multiple connections supported)
+    I (6474) [vendor_ie]: Mesh-Lite Scan done 
+    W (6484) wifi:Haven't to connect to a suitable AP now!
+    I (6484) [vendor_ie]: wifi_cfg Goldspear, ap_info.ssid , router_config Goldspear
+    I (6484) [vendor_ie]: wifi_cfg mac 00:00:00:00:00:00, ap_info mac 6c:c4:00:40:77:c4 
+    I (6494) [vendor_ie]: esp_wifi_connect return ESP_OK
+    I (6494) [vendor_ie]: RTC store: temp_mesh_id:255; ssid:       Goldspear; bssid:00:00:00:00:00:00; crc:1476009379 
+    I (7414) [vendor_ie]: esp_wifi_connect return ESP_OK 
+    I (7414) [ESP_Mesh_Lite_Comm]: Retry to connect to the AP
+    W (11294) wifi:Haven't to connect to a suitable AP now!
+    I (11294) wifi_manager: System info channel:13 layer:1 self:38:18:2b:8a:75:24 parent:00:00:00:00:00:00 rssi:-120 free_heap:87696
+    I (12414) [vendor_ie]: esp_wifi_connect return ESP_OK 
+    I (12414) [ESP_Mesh_Lite_Comm]: Retry to connect to the AP
+    I (17684) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy
+
+    E (17694) [ESP_Mesh_Lite_Comm]: Disconnect reason : 201
+    W (21294) wifi:Haven't to connect to a suitable AP now!
+    I (21294) wifi_manager: System info channel:1 layer:1 self:38:18:2b:8a:75:24 parent:00:00:00:00:00:00 rssi:-120 free_heap:87696
+    I (22414) [vendor_ie]: esp_mesh_lite_wifi_scan_start return ESP_OK 
+    I (27254) [vendor_ie]: Mesh-Lite Scan done 
+    W (27254) wifi:Haven't to connect to a suitable AP now!
+    I (27254) [vendor_ie]: wifi_cfg        Goldspear, ap_info.ssid , router_config Goldspear
+    I (27254) [vendor_ie]: wifi_cfg mac 00:00:00:00:00:00, ap_info mac 6c:c4:00:40:77:c4 
+    I (27264) [vendor_ie]: esp_wifi_connect return ESP_OK
+    I (27274) [vendor_ie]: RTC store: temp_mesh_id:255; ssid:      Goldspear; bssid:00:00:00:00:00:00; crc:1476009379 
+    W (31294) wifi:Haven't to connect to a suitable AP now!
+    I (31294) wifi_manager: System info channel:13 layer:1 self:38:18:2b:8a:75:24 parent:00:00:00:00:00:00 rssi:-120 free_heap:87660
+    I (32104) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy
+
+    E (32104) [ESP_Mesh_Lite_Comm]: Disconnect reason : 201
+    ���������������������������������������������������������������� (37214) [vendor_ie]: esp_mesh_lite_wifi_scan_start return ESP_OK 
+    W (41294) wifi:Haven't to connect to a suitable AP now!
+    I (41294) wifi_manager: System info channel:13 layer:1 self:38:18:2b:8a:75:24 parent:00:00:00:00:00:00 rssi:-120 free_heap:86360
+    I (42044) [vendor_ie]: Mesh-Lite Scan done 
+    W (42054) wifi:Haven't to connect to a suitable AP now!
+    I (42054) [vendor_ie]: wifi_cfg        Goldspear, ap_info.ssid , router_config Goldspear
+    I (42054) [vendor_ie]: wifi_cfg mac 00:00:00:00:00:00, ap_info mac 6c:c4:00:40:77:c4 
+    I (42064) [vendor_ie]: esp_wifi_connect return ESP_OK
+    I (42074) [vendor_ie]: RTC store: temp_mesh_id:255; ssid:      Goldspear; bssid:00:00:00:00:00:00; crc:1476009379
+    I (46904) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy
+
+    E (46904) [ESP_Mesh_Lite_Comm]: Disconnect reason : 201
+    W (51294) wifi:Haven't to connect to a suitable AP now!
+    I (51294) wifi_manager: System info channel:1 layer:1 self:38:18:2b:8a:75:24 parent:00:00:00:00:00:00 rssi:-120 free_heap:87696
+    I (52014) [vendor_ie]: esp_mesh_lite_wifi_scan_start return ESP_OK 
+    I (56854) [vendor_ie]: Mesh-Lite Scan done 
+    W (56854) wifi:Haven't to connect to a suitable AP now!
+    I (56854) [vendor_ie]: wifi_cfg        Goldspear, ap_info.ssid , router_config Goldspear
+    I (56854) [vendor_ie]: wifi_cfg mac 00:00:00:00:00:00, ap_info mac 6c:c4:00:40:77:c4 
+    I (56864) [vendor_ie]: esp_wifi_connect return ESP_OK
+    I (56874) [vendor_ie]: RTC store: temp_mesh_id:255; ssid:      Goldspear; bssid:00:00:00:00:00:00; crc:1476009379 
+    W (61294) wifi:Haven't to connect to a suitable AP now!
+    I (61294) wifi_manager: System info channel:14 layer:1 self:38:18:2b:8a:75:24 parent:00:00:00:00:00:00 rssi:-120 free_heap:87652
+    I (61704) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy
+
+    E (61704) [ESP_Mesh_Lite_Comm]: Disconnect reason : 201
+    I (66814) [vendor_ie]: esp_mesh_lite_wifi_scan_start return ESP_OK 
+    W (71294) wifi:Haven't to connect to a suitable AP now!
+    I (71294) wifi_manager: System info channel:14 layer:1 self:38:18:2b:8a:75:24 parent:00:00:00:00:00:00 rssi:-120 free_heap:86080
+    I (71644) [vendor_ie]: Mesh-Lite Scan done 
+    W (71654) wifi:Haven't to connect to a suitable AP now!
+    I (71654) [vendor_ie]: wifi_cfg        Goldspear, ap_info.ssid , router_config Goldspear
+    I (71654) [vendor_ie]: wifi_cfg mac 00:00:00:00:00:00, ap_info mac 6c:c4:00:40:77:c4 
+    I (71664) [vendor_ie]: esp_wifi_connect return ESP_OK
+    I (71664) [vendor_ie]: RTC store: temp_mesh_id:255; ssid:      Goldspear; bssid:00:00:00:00:00:00; crc:1476009379 
+    I (76504) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy
+
+
+
+
+    ///////////////////// ESP 2 //////////////////////////////////
+
+    I (614) main_task: Calling app_main()
+    I (634) bridge_common: esp-iot-bridge version: 1.0.1
+    I (644) wifi:wifi driver task: 3ffd0828, prio:23, stack:6656, core=0
+    I (644) wifi:wifi firmware version: 14da9b7
+    I (644) wifi:wifi certification version: v7.0
+    I (644) wifi:config NVS flash: enabled
+    I (644) wifi:config nano formatting: disabled
+    I (654) wifi:Init data frame dynamic rx buffer num: 32
+    I (654) wifi:Init static rx mgmt buffer num: 5
+    I (664) wifi:Init management short buffer num: 32
+    I (664) wifi:Init dynamic tx buffer num: 32
+    I (674) wifi:Init static rx buffer size: 1600
+    I (674) wifi:Init static rx buffer num: 10
+    I (674) wifi:Init dynamic rx buffer num: 32
+    I (684) wifi_init: rx ba win: 6
+    I (684) wifi_init: accept mbox: 6
+    I (684) wifi_init: tcpip mbox: 32
+    I (694) wifi_init: udp mbox: 6
+    I (694) wifi_init: tcp mbox: 6
+    I (694) wifi_init: tcp tx win: 5760
+    I (704) wifi_init: tcp rx win: 5760
+    I (704) wifi_init: tcp mss: 1440
+    I (704) wifi_init: WiFi RX IRAM OP enabled
+    I (714) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06
+    I (784) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)
+    I (814) wifi:mode : null
+    I (814) wifi:mode : softAP (00:4b:12:30:98:8d)
+    I (814) wifi:Total power save buffer number: 16
+    I (814) wifi:Init max length of beacon: 752/752
+    I (814) wifi:Init max length of beacon: 752/752
+    Add netif ap with c1bb0fb(commit id)
+    I (824) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1
+    I (824) bridge_common: netif list add success
+    I (844) bridge_common: [WIFI_AP_DEF ]
+    I (844) bridge_common: Set ip info:192.168.5.1
+    I (844) bridge_wifi: SoftAP IP network segment has changed, deauth all station
+    I (854) wifi:Disabled PMF config for SoftAP
+    I (854) wifi:Total power save buffer number: 16
+    I (864) bridge_common: DHCPS Restart, deauth all station
+    I (864) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.5.1
+    I (874) bridge_common: [WIFI_AP_DEF ]Name Server1: 114.114.114.114
+    Add netif sta with c1bb0fb(commit id)
+    I (884) bridge_common: netif list add success
+    I (884) wifi:mode : sta (00:4b:12:30:98:8c) + softAP (00:4b:12:30:98:8d)
+    I (894) wifi:enable tsf
+    E (894) NVS: Failed to read IP info from NVS
+    I (904) wifi:Disabled PMF config for STA
+    I (904) bridge_wifi: [esp_bridge_wifi_set_config] softap ssid: ESP_Bridge password: 12345678
+    I (1164) wifi:Total power save buffer number: 16
+    I (1164) bridge_wifi: SoftAP config changed, deauth all station
+    I (1164) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.5.1
+    I (1174) Mesh-Lite: esp-mesh-lite component version: 1.0.2
+    I (1174) Mesh-Lite: Initializing ESP-NOW for Mesh-Lite Ash in esp_mesh_lite.c
+    I (1184) ESPNOW: espnow [version: 2.0] init
+    I (1184) Mesh-Lite: Initializing Mesh-Lite-Core Ash in esp_mesh_lite.c
+    I (1194) [vendor_ie]: Mesh-Lite commit id: 308dc1f
+
+    I (1204) [vendor_ie]: Mesh ID: 77
+    W (1204) [vendor_ie]: Error Get[4354]
+    W (1204) [vendor_ie]: Error Get[4354] 
+    W (1214) wifi:Haven't to connect to a suitable AP now!
+    I (1214) [ESP_Mesh_Lite_Comm]: msg action add success
+    I (1224) [ESP_Mesh_Lite_Comm]: Bind Socket 54, port 6364 
+    I (1224) [ESP_Mesh_Lite_Comm]: Bind Socket 55, port 6363
+    I (1234) [ESP_Mesh_Lite_Comm]: Bind Socket 56, port 6366 
+    I (1234) [ESP_Mesh_Lite_Comm]: Bind Socket 57, port 6365
+    I (1244) [mesh-lite-espnow]: Start espnow task
+    W (1244) [vendor_ie]: Error Get[4354]
+    I (1244) wifi_manager: SoftAP SSID default: ESP_Bridge
+    W (1254) [vendor_ie]: Error Get[4354]
+    I (1254) wifi_manager: SoftAP password default used.
+    W (1264) [vendor_ie]: Error Get[4354]
+    W (1264) [vendor_ie]: Error Get[4354]
+    I (1264) Mesh-Lite: Mesh-Lite connecting
+    W (1274) wifi:In 2G band, 5G channel bitmap does not take effect
+    E (1274) wifi:2g bitmap contains only invalid channels= 0xe510
+    I (1284) [vendor_ie]: esp_mesh_lite_wifi_scan_start return ESP_OK 
+    I (1284) wifi_manager: Credentials queue task running - waiting for BLE creds
+    I (1294) BTDM_INIT: BT controller compile version [722c907]
+    I (1304) BTDM_INIT: Using main XTAL as clock source
+    I (1304) BTDM_INIT: Bluetooth MAC: 00:4b:12:30:98:8e
+    I (1564) security: sec_init done (nonce_len=16)
+    I (1584) wifi_prph_coex: BLE Host Task Started
+    I (1584) mqtt5: [APP] Startup..
+    I (1584) mqtt5: [APP] Free memory: 82916 bytes
+    I (1584) mqtt5: [APP] IDF version: v5.5.1-dirty
+    I (1584) main_task: Returned from app_main()
+    I (1624) wifi_prph_coex: Device Address:00:4b:12:30:98:8e
+    I (1624) NimBLE: GAP procedure initiated: advertise;
+    I (1624) NimBLE: disc_mode=2
+    I (1624) NimBLE:  adv_channel_map=0 own_addr_type=0 adv_filter_policy=0 adv_itvl_min=0 adv_itvl_max=0
+    I (1634) NimBLE:
+
+    I (1644) wifi_prph_coex: Advertising started (multiple connections supported)
+    I (6474) [vendor_ie]: Mesh-Lite Scan done 
+    W (6474) wifi:Haven't to connect to a suitable AP now!
+    I (6474) [vendor_ie]: now parent node   : bssid:00:00:00:00:00:00, rssi:64, level:-1 
+    I (6484) [vendor_ie]: update parent node: bssid:38:18:2b:8a:75:25, rssi:-37, level:1
+    I (6484) [vendor_ie]: Find ESP_Bridge
+    I (6494) [vendor_ie]: bssid: 38:18:2b:8a:75:25, level: 2 
+    W (6494) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2
+    W (6504) wifi:Haven't to connect to a suitable AP now!
+    I (6514) [vendor_ie]: wifi_cfg ESP_Bridge, ap_info.ssid , router_config
+    I (6514) [vendor_ie]: wifi_cfg mac 38:18:2b:8a:75:25, ap_info mac 6c:c4:00:40:77:c4 
+    I (6524) [vendor_ie]: esp_wifi_connect return ESP_OK
+    I (6534) [vendor_ie]: RTC store: temp_mesh_id:255; ssid:ESP_Bridge; bssid:38:18:2b:8a:75:25; crc:3934590376 
+    I (7514) [vendor_ie]: esp_wifi_connect return ESP_OK 
+    I (7514) [ESP_Mesh_Lite_Comm]: Retry to connect to the AP
+    W (11284) wifi:Haven't to connect to a suitable AP now!
+    I (11284) wifi_manager: System info channel:1 layer:2 self:00:4b:12:30:98:8c parent:00:00:00:00:00:00 rssi:-120 free_heap:87944
+    I (12534) [vendor_ie]: esp_wifi_connect return ESP_OK 
+    I (12534) [ESP_Mesh_Lite_Comm]: Retry to connect to the AP
+    I (12774) wifi:new:<1,1>, old:<1,1>, ap:<1,1>, sta:<1,1>, prof:1, snd_ch_cfg:0x0
+    I (12774) wifi:state: init -> auth (0xb0)
+    I (12784) wifi:state: auth -> assoc (0x0)
+    I (12794) wifi:state: assoc -> run (0x10)
+    I (12824) wifi:connected with ESP_Bridge, aid = 1, channel 1, 40U, bssid = 38:18:2b:8a:75:25
+    I (12824) wifi:security: WPA2-PSK, phy: bgn, rssi: -34
+    I (12824) wifi:pm start, type: 1
+
+    I (12824) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+    I (12834) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+    I (12994) Mesh-Lite: netif network segment conflict check
+    I (13894) esp_netif_handlers: sta ip: 192.168.5.2, mask: 255.255.255.0, gw: 192.168.5.1
+    I (13894) bridge_wifi: Connected with IP Address:192.168.5.2
+    I (13894) bridge_common: [WIFI_AP_DEF ]
+    I (13894) bridge_common: IP Address:192.168.4.1
+    I (13904) bridge_common: GW Address:192.168.4.1
+    I (13904) bridge_common: NM Address:255.255.255.0
+    I (13914) bridge_common: ip reallocate new:192.168.4.1
+    I (13914) bridge_wifi: SoftAP IP network segment has changed, deauth all station
+    I (13924) [vendor_ie]: RTC store: temp_mesh_id:255; ssid:ESP_Bridge; bssid:38:18:2b:8a:75:25; crc:3934590376
+    I (13944) wifi_manager: tcp_client_write_task started
+    I (13954) wifi:<ba-add>idx:0 (ifx:0, 38:18:2b:8a:75:25), tid:0, ssn:0, winSize:64
+    I (21284) wifi_manager: System info channel:1 layer:2 self:00:4b:12:30:98:8c parent:38:18:2b:8a:75:25 rssi:-33 free_heap:81288
+    I (31284) wifi_manager: System info channel:1 layer:2 self:00:4b:12:30:98:8c parent:38:18:2b:8a:75:25 rssi:-34 free_heap:81288
+    I (41284) wifi_manager: System info channel:1 layer:2 self:00:4b:12:30:98:8c parent:38:18:2b:8a:75:25 rssi:-34 free_heap:81300
+    I (51284) wifi_manager: System info channel:1 layer:2 self:00:4b:12:30:98:8c parent:38:18:2b:8a:75:25 rssi:-35 free_heap:81300
+    I (61284) wifi_manager: System info channel:1 layer:2 self:00:4b:12:30:98:8c parent:38:18:2b:8a:75:25 rssi:-34 free_heap:81164
+    I (71284) wifi_manager: System info channel:1 layer:2 self:00:4b:12:30:98:8c parent:38:18:2b:8a:75:25 rssi:-34 free_heap:81300
+    I (81284) wifi_manager: System info channel:1 layer:2 self:00:4b:12:30:98:8c parent:38:18:2b:8a:75:25 rssi:-36 free_heap:80980
+    I (91284) wifi_manager: System info channel:1 layer:2 self:00:4b:12:30:98:8c parent:38:18:2b:8a:75:25 rssi:-37 free_heap:81300
+    I (101284) wifi_manager: System info channel:1 layer:2 self:00:4b:12:30:98:8c parent:38:18:2b:8a:75:25 rssi:-34 free_heap:81300
+    I (111284) wifi_manager: System info channel:1 layer:2 self:00:4b:12:30:98:8c parent:38:18:2b:8a:75:25 rssi:-34 free_heap:80980
+    I (121284) wifi_manager: System info channel:1 layer:2 self:00:4b:12:30:98:8c parent:38:18:2b:8a:75:25 rssi:-35 free_heap:80556
+
+
+
+    Connections between root and node, unsure about the connections, mesh formation, root election.
+
+    (ANS)
+
+        

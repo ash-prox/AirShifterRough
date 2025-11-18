@@ -705,6 +705,7 @@ void app_main(void)
      *  - will handle NVS writes and esp_wifi_* calls from its own task context
      */
     wifi_manager_init();
+    //wifi_manager_start();
 
     /*
      * NimBLE init. We start NimBLE after wifi_manager_init() so the wifi manager

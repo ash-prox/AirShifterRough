@@ -10,6 +10,7 @@ extern "C" {
 
 /* Create and start the wifi manager task and queue. Call from app_main(). */
 void wifi_manager_init(void);
+//void wifi_manager_start(void);
 
 /* The Wi-Fi manager creates this queue handle; gatt_svr.c references it as extern. */
 extern QueueHandle_t wifi_cred_queue;

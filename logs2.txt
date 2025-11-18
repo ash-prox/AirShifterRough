@@ -189,3 +189,81 @@ E (2657867) mqtt5_example: Last error captured as transport's socket errno: 0x77
 I (2657867) mqtt5_example: Last errno string (Connection already in progress)
 I (2657877) mqtt5_example: MQTT_EVENT_DISCONNECTED
 I (2672877) mqtt5_example: Other event id:7
+
+
+
+
+
+/----------------------------------------------------------------------------------------------------/
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////// MESH LITE secondary dev logs when first device cuts in between /////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+/----------------------------------------------------------------------------------------------------/
+
+
+
+I (2411264) wifi_manager: System info channel:1 layer:2 self:00:4b:12:30:98:8c parent:38:18:2b:8a:75:25 rssi:-31 free_heap:81176
+I (2421264) wifi_manager: System info channel:1 layer:2 self:00:4b:12:30:98:8c parent:38:18:2b:8a:75:25 rssi:-30 free_heap:81720
+I (2431264) wifi_manager: System info channel:1 layer:2 self:00:4b:12:30:98:8c parent:38:18:2b:8a:75:25 rssi:-34 free_heap:81052
+I (2441264) wifi_manager: System info channel:1 layer:2 self:00:4b:12:30:98:8c parent:38:18:2b:8a:75:25 rssi:-32 free_heap:81720
+I (2449904) wifi:starting SA query procedure with AP(38:18:2b:8a:75:25)
+I (2449904) wifi:Send SA Query req with transaction id bdb0
+I (2450104) wifi:Send SA Query req with transaction id a920
+I (2450304) wifi:Send SA Query req with transaction id d554
+W (2450344) [vendor_ie]: Try to find if there is a better parent node 
+I (2450354) [vendor_ie]: esp_mesh_lite_wifi_scan_start return ESP_OK
+I (2450504) wifi:Send SA Query req with transaction id 298b
+I (2450594) [vendor_ie]: Mesh-Lite Scan done 
+I (2450704) wifi:Send SA Query req with transaction id 81f
+I (2450904) wifi:Send SA Query req with transaction id 5773
+I (2450924) wifi:No response to 6 SA Queries, reset connection sending disassoc
+I (2450924) wifi:state: run -> init (0xd100)
+I (2450924) wifi:pm stop, total sleep time: 0 us / 2428314880 us
+
+I (2450934) wifi:<ba-del>idx:0, tid:0
+I (2450934) wifi:new:<1,0>, old:<1,1>, ap:<1,1>, sta:<1,1>, prof:1, snd_ch_cfg:0x0
+E (2450954) [ESP_Mesh_Lite_Comm]: Disconnect reason : 209
+I (2450994) [vendor_ie]: esp_wifi_connect return ESP_OK 
+I (2450994) [ESP_Mesh_Lite_Comm]: Retry to connect to the AP
+I (2451104) wifi:new:<1,1>, old:<1,0>, ap:<1,1>, sta:<1,1>, prof:1, snd_ch_cfg:0x0
+I (2451104) wifi:state: init -> auth (0xb0)
+I (2451264) wifi_manager: System info channel:1 layer:1 self:00:4b:12:30:98:8c parent:38:18:2b:8a:75:25 rssi:-33 free_heap:82364
+I (2452104) wifi:state: auth -> init (0x200)
+I (2452104) wifi:Coexist: Wi-Fi connect fail, apply reconnect coex policy
+
+I (2452104) wifi:new:<1,0>, old:<1,1>, ap:<1,1>, sta:<1,1>, prof:1, snd_ch_cfg:0x0
+E (2452114) [ESP_Mesh_Lite_Comm]: Disconnect reason : 2
+I (2455884) wifi:new:<1,1>, old:<1,0>, ap:<1,1>, sta:<1,1>, prof:1, snd_ch_cfg:0x0
+I (2455884) wifi:station: 38:18:2b:8a:75:24 join, AID=1, bgn, 40U
+I (2455924) bridge_wifi: STA Connecting to the AP again...
+I (2455964) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.2
+I (2457034) wifi:<ba-add>idx:2 (ifx:1, 38:18:2b:8a:75:24), tid:0, ssn:0, winSize:64
+���������������������������������������������������������������� (2461264) wifi:Haven't to connect to a suitable AP now!
+I (2461264) wifi_manager: System info channel:1 layer:1 self:00:4b:12:30:98:8c parent:00:00:00:00:00:00 rssi:-120 free_heap:79292
+I (2461264) wifi_manager: Child mac: 38:18:2b:8a:75:24
+I (2461994) [vendor_ie]: esp_mesh_lite_wifi_scan_start return ESP_OK 
+I (2466834) [vendor_ie]: Mesh-Lite Scan done 
+W (2466834) wifi:Haven't to connect to a suitable AP now!
+����������������������������������������������������������������2471264) wifi:Haven't to connect to a suitable AP now!
+I (2471264) wifi_manager: System info channel:1 layer:1 self:00:4b:12:30:98:8c parent:00:00:00:00:00:00 rssi:-120 free_heap:79272
+I (2471264) wifi_manager: Child mac: 38:18:2b:8a:75:24
+I (2475994) [vendor_ie]: esp_mesh_lite_wifi_scan_start return ESP_OK 
+I (2480834) [vendor_ie]: Mesh-Lite Scan done 
+W (2480834) wifi:Haven't to connect to a suitable AP now!
+W (2481264) wifi:Haven't to connect to a suitable AP now!
+I (2481264) wifi_manager: System info channel:1 layer:1 self:00:4b:12:30:98:8c parent:00:00:00:00:00:00 rssi:-120 free_heap:79264
+I (2481264) wifi_manager: Child mac: 38:18:2b:8a:75:24
+I (2489994) [vendor_ie]: esp_mesh_lite_wifi_scan_start return ESP_OK 
+W (2491264) wifi:Haven't to connect to a suitable AP now!
+I (2491264) wifi_manager: System info channel:6 layer:1 self:00:4b:12:30:98:8c parent:00:00:00:00:00:00 rssi:-120 free_heap:78372
+I (2491264) wifi_manager: Child mac: 38:18:2b:8a:75:24
+I (2494834) [vendor_ie]: Mesh-Lite Scan done 
+W (2494834) wifi:Haven't to connect to a suitable AP now!
+W (2501264) wifi:Haven't to connect to a suitable AP now!
+I (2501264) wifi_manager: System info channel:1 layer:1 self:00:4b:12:30:98:8c parent:00:00:00:00:00:00 rssi:-120 free_heap:79272
+
+
+
+
+
+

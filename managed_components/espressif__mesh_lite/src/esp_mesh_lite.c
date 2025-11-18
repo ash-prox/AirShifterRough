@@ -427,8 +427,11 @@ void esp_mesh_lite_init(esp_mesh_lite_config_t* config)
     esp_event_handler_instance_register(ESP_MESH_LITE_EVENT, ESP_EVENT_ANY_ID, &esp_mesh_lite_event_ip_changed_handler, NULL, NULL);
     esp_event_handler_instance_register(IP_EVENT, IP_EVENT_STA_LOST_IP, &esp_mesh_lite_event_sta_lost_ip_handler, NULL, NULL);
 
+
+    ESP_LOGI(TAG, "Initializing ESP-NOW for Mesh-Lite Ash in esp_mesh_lite.c"); //Ash statement
     esp_mesh_lite_espnow_init();
 
+    ESP_LOGI(TAG, "Initializing Mesh-Lite-Core Ash in esp_mesh_lite.c"); //Ash statement
     esp_mesh_lite_core_init(config);
 #if CONFIG_MESH_LITE_NODE_INFO_REPORT
     esp_event_handler_instance_register(IP_EVENT, IP_EVENT_STA_GOT_IP, &esp_mesh_lite_event_got_ip_handler, NULL, NULL);

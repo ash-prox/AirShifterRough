@@ -49,7 +49,7 @@ dependencies:
       require: private
       version: '>=5.0'
     source:
-      registry_url: https://components.espressif.com
+      registry_url: https://components.espressif.com/
       type: service
     version: 1.0.1
   espressif/mesh_lite:
@@ -86,8 +86,9 @@ dependencies:
       type: idf
     version: 5.5.1
 direct_dependencies:
+- espressif/iot_bridge
 - espressif/mesh_lite
 - idf
-manifest_hash: 199d18026716fc096c5fb2de8f4e6b734275fed63322b81efc459bffbaf0de0d
+manifest_hash: c56e55740fa50de4487511e6e4cce4b4c846120f5bdd4ee1bd7d324804b3ebc4
 target: esp32
 version: 2.0.0
