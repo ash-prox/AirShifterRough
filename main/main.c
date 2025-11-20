@@ -407,6 +407,11 @@ bleprph_advertise(void)
     // Set advertising parameters
     adv_params.conn_mode = BLE_GAP_CONN_MODE_UND;
     adv_params.disc_mode = BLE_GAP_DISC_MODE_GEN;
+    // Reduce BLE duty cycle: set advertising interval to 1 second (1000 ms)
+    adv_params.itvl_min = 1600; // 1000 ms / 0.625 ms = 1600
+    adv_params.itvl_max = 1600;
+    adv_params.high_duty_cycle = 0;
+
 
     // Start advertising if not already active
     rc = ble_gap_adv_start(own_addr_type, NULL, BLE_HS_FOREVER,
