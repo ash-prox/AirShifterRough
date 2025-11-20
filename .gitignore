@@ -1,0 +1,5 @@
+#add the entire build directory to gitignore
+/build/
+/.vscode/
+/.devcontainer/
+/.cache/
